@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block header %}
+    {{ super() }}
+    <section>
+      <div class="container">
+        <div class="row">
+          <h1>10 Free Loops Emailed Every Week</h1>
+          <h2>Handpicked from our epic premium collection</h2>
+        </div>
+        <div class="row">
+          <div id="mc_embed_signup">
+            <form action="{{ MAILCHIMP }}" class="validate" id="mc-embedded-subscribe-form" method=
+            "post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+              <div class="mc-field-group">
+                <input class="required email" id="mce-EMAIL" name="EMAIL"
+                placeholder="Enter Email" type="email" value="">
+                <button class="btn btn-primary" id="mc-embedded-subscribe" type=
+                "submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <span class='st_twitter_large' displayText='Tweet'></span>
+          <span class='st_facebook_large' displayText='Facebook'></span>
+          <span class='st_googleplus_large' displayText='Google +'></span>
+          <span class='st_email_large' displayText='Email'></span>
+        </div>
+      </div>
+    </section>
+{% endblock header %}
+{% block content %}
+      <section class="samples">
+        <div class="row">
+          <h3 class="span12">Subscribe now and get instant access to all ## prior weeks!</h3>
+        </div>
+        <ul class="row">
+          <li class="span3">
+            <iframe src="//player.vimeo.com/video/9417906?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </li>
+          <li class="span3">
+            <iframe src="//player.vimeo.com/video/19145988?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </li>
+          <li class="span3">
+            <iframe src="//player.vimeo.com/video/26941600?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </li>
+          <li class="span3">
+            <iframe src="//player.vimeo.com/video/23693563?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </li>
+        </ul>
+      </section>
+{% endblock content %}

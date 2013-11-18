@@ -1,0 +1,6 @@
+[submodule "pelican/theme/static/components/bootstrap"]
+	path = pelican/theme/static/components/bootstrap
+	url = https://github.com/twbs/bootstrap.git
+[submodule "pelican/theme/static/components/font-awesome"]
+	path = pelican/theme/static/components/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git

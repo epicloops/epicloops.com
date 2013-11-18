@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+{% block head %}
+  <!-- Basic Page Needs
+  ================================================== -->
+  <title>{% block title %}{{ SITENAME }} - {{ SITE_DESC }}{% endblock title %}</title>
+  <meta charset="utf-8">
+  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="description" content="{% block description %}{{ SITE_DESC }}{% endblock description %}">
+  {% block tags %}{% endblock tags %}
+
+  <!-- Mobile
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS
+  ================================================== -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+  {% assets "style_css" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet">
+  {% endassets %}
+
+  <!-- Fav and touch icons
+  ================================================== -->
+  {% assets "icon_144_precomposed_png" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="apple-touch-icon-precomposed" sizes="144x144">
+  {% endassets %}
+  {% assets "icon_114_precomposed_png" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="apple-touch-icon-precomposed" sizes="114x114">
+  {% endassets %}
+  {% assets "icon_72_precomposed_png" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="apple-touch-icon-precomposed" sizes="72x72">
+  {% endassets %}
+  {% assets "icon_57_precomposed_png" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="apple-touch-icon-precomposed">
+  {% endassets %}
+  {% assets "favicon_png" %}
+  <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="shortcut icon">
+  {% endassets %}
+{% endblock %}
+</head>
+<body>
+  <div class="wrap">
+    <div class="bg-divider">
+    </div>
+    <header>
+    {% block header %}
+      <nav>
+        <div class="container">
+          <div class="row">
+            <a href="{{ SITEURL }}" class="brand">
+              {% assets "epicloops_logo_png" %}
+              <img src='{{ SITEURL }}/{{ ASSET_URL }}' />
+              {% endassets %}
+            </a>
+          </div>
+        </div>
+      </nav>
+    {% endblock %}
+    </header>
+    <section class="content">
+      <div class="container">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </section>
+  </div>
+  <div class="push">
+  </div>
+  <footer>
+    <div class="container">
+      {% block footer %}
+      <ul class="row">
+        <li>© 2013 epicloops</li>
+        <li>
+          <a href="{{ SITEURL }}/about">About</a>
+        </li>
+        <li>
+          <a href="{{ SITEURL }}/contact">Contact</a>
+        </li>
+      </ul>
+      {% endblock %}
+    </div>
+  </footer>
+  {% include 'analytics.html' %}
+  {% include 'share-this.html' %}
+</body>
+</html>

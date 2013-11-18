@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="114"
+   height="114"
+   id="svg3000"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   inkscape:export-filename="/home/ajw/Desktop/epicloops/media/ico/apple-touch-icon-72-precomposed.png.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="epicloops-ico-72.svg">
+  <defs
+     id="defs3002" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.3193102"
+     inkscape:cx="39.618777"
+     inkscape:cy="25.891892"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1375"
+     inkscape:window-height="876"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3005">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-938.3622)">
+    <path
+       d="m 57.581784,939.27832 c -0.08985,0 -0.161459,-0.0724 -0.250653,-0.0724 -7.495614,-0.0872 -15.131291,1.27306 -22.488965,4.25736 -0.0186,0 -0.04272,0 -0.06485,0 -0.0093,0 -0.02204,0 -0.03415,0 -1.167354,0.47875 -2.292733,0.99668 -3.405899,1.54727 -0.778612,0.37721 -1.531777,0.78124 -2.2944,1.19039 -0.115948,0.0732 -0.241893,0.12414 -0.356035,0.1894 l 0.0063,0 c -8.819618,4.85096 -15.948378,11.73716 -20.9431025,19.82536 l -7.73183629,0.10197 10.56692279,32.54586 c 5.857869,-8.31963 13.992366,-21.20194 15.843022,-23.4726 2.96338,-4.31253 6.89385,-8.01707 11.649523,-10.77705 0,0 3.031515,-1.47121 4.638809,-2.12462 18.801629,-7.6234 40.325197,1.19522 48.073872,19.69575 7.746722,18.50265 -1.217524,39.68375 -20.016326,47.30395 -18.800994,7.6249 -40.323645,-1.1911 -48.075464,-19.6954 -0.677662,-1.6137 -1.181235,-3.2539 -1.605287,-4.8985 l -20.99908365,0 c 0.71249994,3.8584 1.87635435,8.5446 3.45615915,12.3188 12.0752715,28.8439 45.6198855,42.5882 74.9261105,30.7032 29.306162,-11.8848 43.274872,-44.8955 31.197692,-73.73406 -8.99406,-21.48094 -29.898401,-34.56359 -52.089915,-34.94662"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline"
+       id="path3112"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccscc" />
+    <text
+       xml:space="preserve"
+       style="font-size:105.62692261px;font-style:italic;font-variant:normal;font-weight:800;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Centrale Sans Rounded;-inkscape-font-specification:Centrale Sans Rounded Ultra-Bold Italic"
+       x="24.482119"
+       y="1022.8246"
+       id="text3213"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3215"
+         x="24.482119"
+         y="1022.8246">e</tspan></text>
+  </g>
+</svg>

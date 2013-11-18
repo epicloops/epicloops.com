@@ -1,0 +1,6 @@
+pelican/output/*
+
+.DS_Store
+.vagrant
+*.pid
+*.pyc
