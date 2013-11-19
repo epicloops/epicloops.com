@@ -106,7 +106,7 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-s3sync:
+s3sync: publish
 	. $(BASEDIR)/s3sync.sh
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github s3sync

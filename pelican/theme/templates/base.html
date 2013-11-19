@@ -14,6 +14,16 @@
   ================================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Facebook Open Graph
+  ================================================== -->
+  <meta property="og:title" content="{{ AUTHOR }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}">
+  {% assets "epicloops_logo_png" %}
+  <meta property="og:image" content="{{ SITEURL }}/{{ ASSET_URL }}">
+  {% endassets %}
+  <meta property="og:description" content="{{ SITE_DESC }}">
+
   <!-- CSS
   ================================================== -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
