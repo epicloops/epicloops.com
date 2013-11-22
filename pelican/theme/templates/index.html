@@ -20,11 +20,11 @@
             </form>
           </div>
         </div>
-        <div class="row">
-          <span class='st_twitter_large' displayText='Tweet'></span>
-          <span class='st_facebook_large' displayText='Facebook'></span>
-          <span class='st_googleplus_large' displayText='Google +'></span>
-          <span class='st_email_large' displayText='Email'></span>
+        <div class="row share-buttons">
+          {% include 'share-this-buttons.html' %}
+        </div>
+        <div class="row twitter-button">
+          {% include 'twitter-follow-link.html' %}
         </div>
       </div>
     </section>
@@ -50,3 +50,7 @@
         </ul>
       </section>
 {% endblock content %}
+{% block scripts %}
+  {{ super() }}
+  {% include 'twitter-follow-script.html' %}
+{% endblock %}

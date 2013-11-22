@@ -93,7 +93,9 @@
       {% endblock %}
     </div>
   </footer>
+  {% block scripts %}
   {% include 'analytics.html' %}
-  {% include 'share-this.html' %}
+  {% include 'share-this-script.html' %}
+  {% endblock %}
 </body>
 </html>

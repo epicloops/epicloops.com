@@ -15,7 +15,7 @@ header section,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 100px 0;
+  padding: 80px 0;
   text-align: center;
 }
 
@@ -80,6 +80,10 @@ header section form .btn-primary,
   border: 1px solid #613e12;
 }
 
+.share-buttons {
+  margin-bottom: 10px;
+}
+
 .content {
   padding: 10px 0 60px;
 }
@@ -97,11 +101,16 @@ header section form .btn-primary,
   color: white;
 }
 
-.samples ul li iframe {
+.samples iframe {
   background-color: #222;
   height:123px;
   width:220px;
   border: 0;
+}
+
+.sidebar .samples iframe {
+  height: 90px;
+  width: 160px;
 }
 
 .page {
@@ -189,9 +198,14 @@ footer ul li a:hover {
     width: 225px;
   }
 
-  .samples ul li iframe {
+  .samples iframe {
     height:152px;
     width:270px;
+  }
+
+  .sidebar .samples iframe {
+    height:123px;
+    width:220px;
   }
 }
 
@@ -201,7 +215,7 @@ footer ul li a:hover {
     width: 150px;
   }
 
-  .samples ul li iframe {
+  .samples iframe {
     height: 90px;
     width: 160px;
   }
