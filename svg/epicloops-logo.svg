@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="185"
-   height="40"
+   width="250"
+   height="50"
    id="svg3169"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="epicloops-logo.eps"
-   inkscape:export-filename="/home/ajw/Desktop/epicloops/media/img/epicloops-logo.png"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="epicloops-logo.svg"
+   inkscape:export-filename="/Users/AJ/Projects/src/epicloops.com/png/logo-black-250x50.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -28,35 +28,18 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.5501103"
-     inkscape:cx="64.361029"
-     inkscape:cy="23.490578"
+     inkscape:cx="41.947782"
+     inkscape:cy="31.861253"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1375"
-     inkscape:window-height="876"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1">
-    <sodipodi:guide
-       orientation="1,0"
-       position="2.3528394,77.251559"
-       id="guide3305" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="183.12933,-58.820984"
-       id="guide3307" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="-87.055056,1.9606995"
-       id="guide3309" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="-22.744114,37.25329"
-       id="guide3311" />
-  </sodipodi:namedview>
+     inkscape:window-width="1440"
+     inkscape:window-height="768"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata3174">
     <rdf:RDF>
@@ -73,39 +56,39 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Background"
-     transform="translate(0,-1012.3622)" />
+     transform="translate(0,-1002.3622)" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-1012.3622)">
+     transform="translate(0,-1002.3622)">
     <path
-       d="m 20.67759,1015.1089 c -0.02862,0 -0.05139,-0.017 -0.07983,-0.016 -2.386116,-0.028 -4.816826,0.4052 -7.159037,1.3551 -0.0065,0 -0.01365,0.01 -0.02056,0.01 -0.0029,0 -0.0065,0 -0.01101,0 -0.371607,0.1513 -0.729861,0.3173 -1.084223,0.4926 -0.24786,0.12 -0.487614,0.2487 -0.730386,0.3792 -0.03688,0.02 -0.07697,0.039 -0.113345,0.059 l 0.0019,0 c -2.8075949,1.544 -5.0769349,3.7361 -6.6669319,6.3111 l -2.461328,0.032 3.363837,10.3602 c 1.864767,-2.6484 4.4542639,-6.7492 5.0433959,-7.472 0.943354,-1.373 2.194556,-2.5521 3.708464,-3.4309 0,0 0.965041,-0.4684 1.4767,-0.6762 5.985229,-2.4267 12.836947,0.3804 15.303622,6.2699 2.466063,5.8899 -0.387576,12.6326 -6.371901,15.0585 -5.985036,2.4272 -12.836468,-0.3792 -15.3041419,-6.2696 -0.215736,-0.514 -0.376033,-1.0361 -0.511027,-1.5595 l -6.684751,-0.01 c 0.226809,1.2283 0.59731,2.7199 1.100216,3.9215 3.84399,9.1819 14.5224399,13.5572 23.8516549,9.7739 9.329202,-3.7834 13.775949,-14.2917 9.931347,-23.4722 -2.863134,-6.8382 -9.517734,-11.003 -16.582086,-11.1247"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline"
+       d="m 27.054355,1002.6033 c -0.03927,0 -0.07049,-0.026 -0.109477,-0.026 -3.272635,-0.036 -6.60643,0.5559 -9.818844,1.8585 -0.0087,0 -0.01864,0.026 -0.02819,0.026 -0.0039,0 -0.0087,0 -0.01514,0 -0.50967,0.2089 -1.001027,0.4353 -1.487046,0.6753 -0.339949,0.1676 -0.668779,0.3414 -1.001748,0.5201 -0.05058,0.026 -0.105568,0.054 -0.155457,0.08 l 0.0026,0 c -3.850704,2.1179 -6.9631752,5.1242 -9.1439063,8.6561 l -3.3757885,0.041 4.6136078,14.2096 c 2.5575868,-3.6327 6.109163,-9.2571 6.917177,-10.2485 1.293839,-1.8832 3.009901,-3.5001 5.086273,-4.7057 0,0 1.323583,-0.642 2.025342,-0.9269 8.208929,-3.3287 17.606274,0.5216 20.989397,8.599 3.382284,8.0783 -0.53157,17.3261 -8.739262,20.6534 -8.208664,3.3289 -17.60562,-0.5203 -20.990111,-8.5993 -0.295888,-0.7047 -0.515741,-1.4209 -0.700889,-2.139 l -9.1683467,-0.026 c 0.311076,1.6847 0.8192296,3.7304 1.5089813,5.3782 5.2721525,12.5937 19.9179804,18.5943 32.7132914,13.4054 12.795296,-5.1889 18.894148,-19.6014 13.621159,-32.1926 -3.92688,-9.379 -13.053874,-15.0911 -22.742855,-15.2579"
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline"
        id="path3112"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccccccccccccccscc" />
     <text
        xml:space="preserve"
-       style="font-size:33.62482834000000054px;font-style:italic;font-variant:normal;font-weight:800;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Centrale Sans Rounded;-inkscape-font-specification:Centrale Sans Rounded Ultra-Bold Italic"
-       x="39.046448"
-       y="1042.0267"
+       style="font-size:46.11750793px;font-style:italic;font-variant:normal;font-weight:800;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:Centrale Sans Rounded;-inkscape-font-specification:Centrale Sans Rounded Ultra-Bold Italic"
+       x="52.247818"
+       y="1039.5219"
        id="text3205"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3207"
-         x="39.046448"
-         y="1042.0267">picloops</tspan></text>
+         x="52.247818"
+         y="1039.5219">picloops</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:33.62482834000000054px;font-style:italic;font-variant:normal;font-weight:800;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Centrale Sans Rounded;-inkscape-font-specification:Centrale Sans Rounded Ultra-Bold Italic"
-       x="10.140766"
-       y="1041.7046"
+       style="font-size:46.11750793px;font-style:italic;font-variant:normal;font-weight:800;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:Centrale Sans Rounded;-inkscape-font-specification:Centrale Sans Rounded Ultra-Bold Italic"
+       x="12.60277"
+       y="1039.08"
        id="text3213"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3215"
-         x="10.140766"
-         y="1041.7046">e</tspan></text>
+         x="12.60277"
+         y="1039.08">e</tspan></text>
   </g>
 </svg>

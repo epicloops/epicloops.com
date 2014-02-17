@@ -1,0 +1,47 @@
+{% comment %}
+
+  This snippet renders a Bootstrap carousel, with the images and products
+  specified in the theme settings.
+
+  For more information, see:
+   - http://getbootstrap.com/javascript/#carousel
+
+{% endcomment %}
+<div id="carousel" data-interval="5000" class="hidden-xs carousel slide">
+  <!-- Carousel Indicators -->
+  <ol class="carousel-indicators">
+    {% for product in collections[settings.slideshow_collection].products offset: 0 limit: 4 %}
+      <li data-target="#carousel" data-slide-to="{{forloop.index}}" class="{% if forloop.first %}active{% endif %}"></li>
+    {% endfor %}
+  </ol>
+
+  <!-- Carousel Items -->
+  <div class="container carousel-inner">
+      {% for product in collections[settings.slideshow_collection].products offset: 0 limit: 4 %}
+      <div class="row item {% if forloop.first %}active{% endif %}">
+          <div class="col-xs-3 col-xs-offset-3 item-image">
+            <a href="{{ shop.url }}{{ product.url }}" class="thumbnail">
+              <img src="{{ product.featured_image | product_img_url: 'large' }}" class="img-responsive" alt="{{ product.featured_image.alt | escape }}">
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <div class="item-title clearfix">
+              <a href="{{ shop.url }}{{ product.url }}">
+                <h4>{{ product.title }}</h4>
+              </a>
+            </div>
+            <div class="item-desc">
+              <p>{{ product.description | newline_to_br | split: '<br />' | first | truncate: 400 }}</p>
+            </div>
+            <div class="item-desc-more">
+              <a href="{{ shop.url }}{{ product.url }}">More...</a>
+            </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+
+  <!-- Carousel Navigation -->
+  <a class="carousel-control left" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="carousel-control right" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>

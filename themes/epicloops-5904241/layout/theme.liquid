@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="{{ shop.name }}">
+
+  {% include 'variables' %}
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon">
+
+  <!-- CSS -->
+  <link href="{{ 'css-bootstrap-min.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <link href="{{ 'css-jplayer.blue.monday.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <link href="{{ 'css-custom.css' | asset_url }}" rel="stylesheet" type="text/css">
+  {% comment %}
+
+  Load font-awesome after css-custom.css since @font-face urls need to be
+  redefined. Enesure @font-face definition is removed from css-font-awesome.min.css
+
+{% endcomment %}
+  <link href="{{ 'css-font-awesome.min.css' | asset_url }}" rel="stylesheet" type="text/css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:900,400,200" type="text/css" />
+
+  <!-- HTML5 shim and Respond.js support for HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="{{ 'js-html5shiv-min.js' | asset_url }}"></script>
+    <script src="{{ 'js-respond-min.js' | asset_url }}"></script>
+    <link href="{{ 'respond-proxy.html' | asset_url | split: '?' | first }}" id="respond-proxy" rel="respond-proxy" />
+    {% assign respond_js_secret_key = (shop.domain | md5) %}
+    <link href="{{ shop.url }}/search?q={{ respond_js_secret_key }}" id="respond-redirect" rel="respond-redirect" />
+    <script src="{{ shop.url }}/search?q={{ respond_js_secret_key }}" type="text/javascript"></script>
+  <![endif]-->
+
+  {{ content_for_header }}
+
+  <!-- Include Main SEO Tags -->
+  {% include 'head-seo' %}
+
+  <!-- Include Open Graph Meta Tags -->
+  {% include 'head-og' %}
+
+  <!-- Conditionally include Shopify's required customer Javascript on customer pages. -->
+  <!-- Needs to be in the head because Shopify's code assumes it's available in the body. -->
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  <!-- Conditionally include Shopify's option selection code for product pages. -->
+  {% if template == 'product' %}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+</head>
+
+<body>
+  <!-- Skip navigation (for screen read accessibility) -->
+  <a href="#content" class="sr-only">Skip to main content</a>
+
+  <!-- Navbar -->
+  {% include 'navbar' %}
+
+  <!-- Slideshow -->
+  {% if template == "index" %}{% include 'slider' %}{% endif %}
+
+  <!-- Content -->
+  <section id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 template-{{ template }}">
+        <!--
+          Shopify doesn't let us override list-collections.liquid directly.
+          Instead, we have to use this hack to customise our /collections and /products pages.
+        -->
+        {% if template == 'list-collections' %}
+          {% include 'collection-listing' %}
+        {% else %}
+          {{ content_for_layout }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  {% include 'footer' %}
+
+  <!-- Jquery -->
+  {{ 'js-jquery-min.js' | asset_url | script_tag }}
+
+  <!-- Bootstrap -->
+  {{ 'js-bootstrap-min.js' | asset_url | script_tag }}
+
+  <!-- Jplayer -->
+  {{ 'js-jquery.jplayer.min.js' | asset_url | script_tag }}
+
+  <!-- Start slideshow -->
+  {% if template == "index" %}
+  <script type='text/javascript'>
+      $(document).ready(function() {
+           $('.carousel').carousel({
+               interval: 5000
+           })
+      });
+  </script>
+  {% endif %}
+
+  <!-- Recently Viewed -->
+  {% if template == 'product' %}
+    {% include 'recently-viewed-js' %}
+  {% elsif show_recently_viewed == true  %}
+    {% include 'recently-viewed-js' %}
+  {% endif %}
+
+</body>
+</html>

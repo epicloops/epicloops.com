@@ -1,5 +1,0 @@
-pelican
-Markdown
-webassets==0.8
-cssmin
-

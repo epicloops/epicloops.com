@@ -1,0 +1,18 @@
+<h3>Account Details</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>{{ customer.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {% if customer.email %}
+        <a href="mailto:{{ customer.email }}">{{ customer.email }}</a><br />
+        {% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>

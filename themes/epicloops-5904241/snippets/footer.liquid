@@ -1,0 +1,55 @@
+{% comment %}
+
+  This snippet renders the footer at the bottom of each page.
+
+{% endcomment %}
+<footer class="footer">
+  <div class="container">
+
+    <div class="hidden-xs row main-footer">
+      <div class="col-xs-2 navigation">
+        {% include 'footer-nav' %}
+      </div>
+      <div class="col-xs-4 twitter">
+        {% include 'footer-twitter' %}
+      </div>
+      <div class="col-xs-3 newsletter">
+        {% include 'footer-contact' %}
+      </div>
+      <div class="col-xs-3 about-us">
+        {% include 'footer-about' %}
+      </div>
+
+    </div>
+
+    <div class="visible-xs row text-center main-footer">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 twitter">
+          {% include 'footer-twitter' %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 newsletter">
+          {% include 'footer-contact' %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 about-us">
+          {% include 'footer-about' %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 navigation">
+          {% include 'footer-nav' %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-xs-12">
+        &copy {{ shop.name }} | <a href="{{ pages.privacy.url }}">{{ pages.privacy.title }}</a> | <a href="{{ pages.tos.url }}">{{ pages.tos.title }}</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,436 @@
+
+/* Fonts
+------------------------------------------------------------- */
+@font-face {
+    font-family: 'centralesansrndxbold_italic';
+    src: url('{{ 'font-CentraleSansRnd-XBoldItalic.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:'  }}');
+    src: url('{{ 'font-CentraleSansRnd-XBoldItalic.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:'  }}?#iefix') format('embedded-opentype'),
+         url('{{ 'font-CentraleSansRnd-XBoldItalic.woff' | asset_url | remove_first: 'https:' | remove_first: 'http:'  }}') format('woff'),
+         url('{{ 'font-CentraleSansRnd-XBoldItalic.ttf' | asset_url | remove_first: 'https:' | remove_first: 'http:'  }}') format('truetype'),
+         url('{{ 'font-CentraleSansRnd-XBoldItalic.svg' | asset_url | remove_first: 'https:' | remove_first: 'http:'  }}#centralesansrndxbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Override default Bootstrap icons to use {{ asset_url }} */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('{{ 'font-glyphicons-halflings-regular.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}');
+  src: url('{{ 'font-glyphicons-halflings-regular.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}#iefix') format('embedded-opentype'),
+       url('{{ 'font-glyphicons-halflings-regular.woff' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}') format('woff'),
+       url('{{ 'font-glyphicons-halflings-regular.ttf' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}') format('truetype'),
+       url('{{ 'font-glyphicons-halflings-regular.svg' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}#glyphicons-halflingsregular') format('svg');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('{{ 'font-fontawesome-webfont.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}&v=4.0.3');
+  src: url('{{ 'font-fontawesome-webfont.eot' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}#iefix&v=4.0.3') format('embedded-opentype'),
+       url('{{ 'font-fontawesome-webfont.woff' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}&v=4.0.3') format('woff'),
+       url('{{ 'font-fontawesome-webfont.ttf' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}&v=4.0.3') format('truetype'),
+       url('{{ 'font-fontawesome-webfont.svg' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}&v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* General
+------------------------------------------------------------- */
+body {
+    padding-top: 50px;
+    font-family:  Source Sans Pro, sans-serif;
+    background-color: #fff;
+    background: url('{{ 'png-bg.png' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}') 0% 0% repeat;
+}
+
+
+/* Navbar
+------------------------------------------------------------- */
+a.navbar-brand {
+/*     TODO: why does img within a tag add 2px of padding?
+       Causes navbar to grow from 50px to 52px and throws off
+       dropdown alignment.*/
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+/* Search box */
+
+.navbar form.search {
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+.navbar form.search .form-group {
+    position: relative;
+}
+
+.navbar form.search span {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    color: #333;
+}
+
+.navbar form.search input {
+    transition: background-color 0.5s ease;
+    background-color: #999;
+    height: 24px;
+    width: 100px;
+    padding: 1px 25px 1px 10px;
+    border: 2px solid #333;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+}
+
+.navbar form.search input::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+.navbar form.search input::-moz-placeholder {
+    color: #c7c7c7;
+}
+.navbar form.search input:-moz-placeholder {   /* Older versions of Firefox */
+    color: #c7c7c7;
+}
+.navbar form.search input:-ms-input-placeholder {
+    color: #c7c7c7;
+}
+
+.navbar form.search input:focus {
+    background-color: #fff;
+}
+
+
+/* Cart & Account */
+
+.navbar .glyphicon {
+    padding-right: 20px;
+}
+
+.navbar .dropdown-menu {
+    padding: 15px;
+    min-width: 250px;
+}
+
+
+/* Slideshow
+------------------------------------------------------------- */
+.carousel {
+    height: 500px;
+    margin-bottom: 50px;
+    background: url({{ 'png-slider-bg.png' | asset_url }}) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-inner.container {
+    width: 100% !important;
+    height: 500px;
+    background: url({{ 'png-slider-shadow.png' | asset_url }}) 0 0 repeat-x;
+}
+
+.carousel-control {
+    background-image: none !important; /* remove background gradients on controls */
+}
+
+.carousel .item {
+    padding: 100px 0;
+}
+
+.carousel .thumbnail {
+    height: auto; /* height is determined by width which maxes out at 300px */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0;
+}
+
+.carousel .item-image img {
+    width: 100%;
+}
+
+.carousel-control .glyphicon {
+    color: #222;
+}
+
+.carousel .carousel-indicators {
+    margin-bottom: 0;
+    bottom: -14px;
+}
+
+.carousel .carousel-indicators li {
+    pointer-events: none;
+    text-indent: 0;
+    padding: 3px 0 0 0;
+    margin: 0 0 0 3px;
+    background-color: #fff;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: #333;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: #333 0 3px 0 inset, #333 0 -3px 0 inset, #333 3px 0 0 inset, #333 -3px 0 0 inset;
+    border: 2px solid #fff;
+    -moz-transition: all 0.2s linear 0s;
+    -webkit-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+}
+
+.carousel .carousel-indicators li.active {
+    background-color: #333;
+    color: #fff;
+    box-shadow: none;
+}
+
+.carousel .item-title a {
+    color: #fff;
+    padding: 0 10px;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    background-color: #333;
+    float: left;
+}
+
+.carousel .item-title a:hover {
+    background-color: #222;
+    text-decoration: none;
+}
+
+
+/* Index
+------------------------------------------------------------- */
+.template-index .lead {
+    font-size: 18px;
+}
+
+.template-index p {
+    margin-top: 10px;
+}
+
+
+/* Product
+------------------------------------------------------------- */
+.template-product .product-images {
+    padding-top: 30px;
+}
+
+
+/* Recently Viewed
+------------------------------------------------------------- */
+.recently-viewed {
+    margin-top: 60px;
+}
+
+
+/* Footer
+------------------------------------------------------------- */
+.footer {
+    margin-top: 50px;
+    padding: 50px 0 30px 0;
+    background: #222 url({{ 'png-main-footer-bg-1.png' | asset_url }}) top left repeat-x;
+    border-top: 1px solid #fff;
+    color: #999;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #999;
+    -moz-transition: all 0.2s linear 0s;
+    -webkit-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    -webkit-transform-style: preserve-3d;
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-footer {
+    padding: 0 0 75px 0;
+    background: url({{ 'png-border-3.png' | asset_url }}) bottom center no-repeat;
+}
+
+.main-footer .main-title {
+    background: url({{ 'png-spacer-1-329px.png' | asset_url }}) bottom left repeat-x;
+    color: #e2e2e2;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.main-footer > .row {
+    padding-bottom: 50px;
+}
+
+
+/* Navigation */
+
+.main-footer .navigation ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* Twitter */
+
+.main-footer .twitter a {
+  text-decoration: underline;
+}
+
+
+/* Newsletter */
+
+.main-footer .newsletter {
+  position: relative;
+}
+
+.main-footer .newsletter .fa-envelope {
+  color: #222;
+  position: absolute;
+  left: 20px;
+  bottom: 8px;
+}
+
+.main-footer .newsletter form input[type=text],
+.main-footer .newsletter form input[type=password] {
+    font-size: 12px;
+    border: none;
+    padding: 7px 10px 6px 10px;
+    margin: 0;
+    box-shadow: none;
+    -moz-transition: all 0.2s linear 0s;
+    -webkit-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    background: #999 url({{ 'ico-email-1.png' | asset_url }}) 10px 10px no-repeat;
+}
+
+.main-footer .newsletter form input[type=text]:focus,
+.main-footer .newsletter form input[type=password]:focus {
+    border: none;
+    background-color: #fff;
+}
+
+.main-footer .newsletter form input[type=text]::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+.main-footer .newsletter form input[type=text]::-moz-placeholder {
+    color: #c7c7c7;
+}
+.main-footer .newsletter form input[type=text]:-moz-placeholder {   /* Older versions of Firefox */
+    color: #c7c7c7;
+}
+.main-footer .newsletter form input[type=text]:-ms-input-placeholder {
+    color: #c7c7c7;
+}
+
+
+/* About */
+
+.main-footer .cards,
+.main-footer .social {
+    padding: 10px 0;
+}
+
+.main-footer .social a {
+    margin: 0 6px 0 0;
+}
+
+.main-footer .cards {
+  margin: 0 auto;
+  width: 145px;
+}
+
+.main-footer .cards a {
+    width: 20px;
+    height: 15px;
+    margin: 0 7px 0 2px;
+    display: block;
+    float: left;
+    -moz-transition: all 0.15s linear 0s;
+    -webkit-transition: all 0.15s linear 0s;
+    -o-transition: all 0.15s linear 0s;
+}
+
+.main-footer .cards a:hover {
+    background-position: 0 -15px;
+}
+
+.main-footer .cards .visa {
+    background: url({{ 'card-visa-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+.main-footer .cards .mastercard {
+    background: url({{ 'card-mastercard-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+.main-footer .cards .paypal {
+    background: url({{ 'card-paypal-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+.main-footer .cards .discover {
+    background: url({{ 'card-discover-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+.main-footer .cards .americanexpress {
+    background: url({{ 'card-americanexpress-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+.main-footer .cards .google {
+    background: url({{ 'card-google-1.png' | asset_url }}) 0 0 no-repeat;
+}
+
+
+
+/* Media Queries
+-------------------------------------------------------------
+Extra small devices (phones, less than 768px)
+No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .navbar-nav>li>a {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .navbar-collapse {
+      text-align: left;
+  }
+
+  .main-footer .newsletter form input[type=text],
+  .main-footer .newsletter form input[type=password] {
+    padding: 7px 10px 6px 33px;
+  }
+
+  .main-footer .cards {
+      margin: 0;
+      width: auto;
+  }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .navbar form.search input {
+    width: 175px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}

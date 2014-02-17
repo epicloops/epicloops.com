@@ -1,0 +1,93 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Brand / Logo -->
+      <a class="navbar-brand" href="{{ shop.url }}" title="{{ shop.name }}">
+        <img src="{{ 'png-logo-white-100x20.png' | asset_url }}" alt="{{ shop.name }}">
+      </a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <!-- Display linklist selected in theme settings. -->
+      <ul class="nav navbar-nav">
+        {% for link in linklists.main-menu.links %}
+          {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}
+          {% if linklists[child_list_handle].links != blank %}
+            <li class="dropdown">
+              <a href="{{ link.url | escape }}" class="dropdown-toggle" data-toggle="dropdown">{{ link.title | escape }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                {% for childlink in linklists[child_list_handle].links %}
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="{% if link.active %}active {% endif %}{% if link.title == 'Contact' %}hidden-sm{% endif %}">{{ link.title | link_to: link.url, link.title }}</li>
+          {% endif %}
+        {% endfor %}
+        {% if settings.social_show_twitter == true %}
+        <li class="dropdown hidden-xs">
+          <a href="{{ settings.social_url_twitter }}" target="_blank"  class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-twitter"></i> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu">
+            {% include 'footer-twitterfeed' %}
+          </div>
+        </li>
+      {% endif %}
+      </ul>
+
+      <!-- Additional (Right) Navigation Links -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="/search" id="navbar-search" class="hidden-xs navbar-form navbar-left search" role="search">
+            <div class="form-group">
+              <input type="hidden" name="type" value="product" />
+              <input name='q' type="text" class="form-control search" placeholder="Search">
+              <a href="#"  onclick="document.getElementById('navbar-search').submit();"><span class="hidden-xs glyphicon glyphicon-search"></span></a>
+            </div>
+          </form>
+          <a href="/search" class="visible-xs">Search</a>
+        </li>
+        <li{% if template contains 'cart' %} class="active"{% endif %}>
+          <a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>{{ cart.item_count }} items ({{ cart.total_price | money }})</a>
+        </li>
+        {% if shop.customer_accounts_enabled %}
+          {% if customer %}
+            <li{% if template contains 'account' %} class="active"{% endif %}>
+              <a href="/account"><span class="glyphicon glyphicon-user"></span>My Account</a>
+            </li>
+            <li>
+              <a href="/account/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+            </li>
+          {% else %}
+            <li class="hidden-xs dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Register / Login <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      {% include 'login' %}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="visible-xs">
+              <a href="/account/login"><span class="glyphicon glyphicon-user"></span>Login</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      </ul>
+
+    </div>
+
+  </div>
+</nav>

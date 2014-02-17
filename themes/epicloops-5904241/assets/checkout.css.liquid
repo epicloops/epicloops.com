@@ -1,0 +1,55 @@
+/* Undo background and gradient */
+body,
+#main,
+#container,
+#header,
+#footer {
+    background-color: #fff;
+    background: url('{{ 'png-bg.png' | asset_url | remove_first: 'https:' | remove_first: 'http:' }}') 0% 0% repeat;
+}
+
+/* Undo overview background and borders */
+#main #overview {
+  background: #fff;
+  border: none;
+}
+#main #overview > * {
+  border: none;
+}
+#main #thumbs div {
+  border: none;
+}
+
+/* Insert your own logo (upload separately) */
+#logo {
+  height: 50px;
+  background: url({{ 'png-logo-black-250x50.png' | asset_url }}) center no-repeat;
+}
+
+#header > h1{
+  text-align:center;
+}
+
+/* Hide the name of the store because we got this nifty logo now */
+
+#header > h1 span.title,
+#header > h1 span.subtitle  {
+  display: none;
+}
+
+#overview h2 {
+    display: none;
+}
+
+#thumbs .plisthead {
+    color: #000;
+}
+
+#thumbs .plist-line-price {
+    color: #999;
+}
+
+#cost {
+    color: #000;
+    font-size: 36px;
+}

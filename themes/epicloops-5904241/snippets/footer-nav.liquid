@@ -1,0 +1,8 @@
+<div class="main-title">
+  <p>Navigation</p>
+</div>
+<ul>
+  {% for link in linklists.main-menu.links %}
+    <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+  {% endfor %}
+</ul>

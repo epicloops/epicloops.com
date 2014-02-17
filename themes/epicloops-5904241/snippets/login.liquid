@@ -1,0 +1,54 @@
+<!-- Regular Login Form -->
+{% form 'customer_login' %}
+
+  <!-- Display any login errors. -->
+  {% if form.errors %}
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">Login failed</h3>
+    </div>
+    <div class="panel-body">
+      Please check your username and password and try again.
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Login Email Address -->
+  <div class="form-group">
+    <label for="customer[email]">Email</label>
+    <input class="form-control" type="email" id="customer[email]" name="customer[email]" value="" placeholder="Email" />
+  </div>
+
+  <!-- Login Password (If Required) -->
+  {% if form.password_needed %}
+  <div class="form-group">
+    <label for="customer[password]">Password</label>
+    <input class="form-control" type="password" id="customer[password]" name="customer[password]" value="" placeholder="Password" />
+  </div>
+  {% endif %}
+
+  <!-- Login Button -->
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+  </div>
+{% endform %}
+
+<!-- Continue as Guest Button (if permitted) -->
+{% if shop.checkout.guest_login %}
+{% form 'guest_login' %}
+  <span class="help-block text-center">or</span>
+  <div class="form-group">
+    <button type="submit" class="btn btn-info btn-lg btn-block">Continue as Guest</button>
+  </div>
+{% endform %}
+{% endif %}
+
+<!-- Recover Password / New Account Links -->
+<hr />
+<p class="text-center">
+  <a {% if template == 'customers/login' %}href="#" onclick="toggleRecoverPasswordForm(); return false;"{% else %}href="/account/login#recover"{% endif %}>Forgot Password?</a>
+  {% if shop.customer_accounts_optional %}
+  &middot;
+  <a href="/account/register">Register</a>
+  {% endif %}
+</p>

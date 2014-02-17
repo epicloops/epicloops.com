@@ -1,0 +1,80 @@
+<div class="hidden-xs row">
+  <div class="col-sm-4 slogan">
+    <h2>Diggin' through the crates of the web.</h2>
+  </div>
+  <div class="col-sm-8 about">
+    <p>
+      Epicloops provides the best <a href="https://creativecommons.org/licenses/" target="_blank">Creative Commons</a> audio files from around the web in loop/sample form. We analyze the quality of every audio file we dig up to determine the best candidates to be sliced into beats and measures. After slicing them up, we package both the full audio file and the pre-sliced samples with data such as tempo, key, etc. so you can easily integrate them into your projects.
+    </p>
+  </div>
+</div>
+<div class="visible-xs row text-center">
+  <div class="col-xs-12 slogan">
+    <h2>Diggin' through the crates of the web.</h2>
+  </div>
+</div>
+<div class="visible-xs row text-center">
+  <div class="col-xs-12 slogan">
+    <p>
+      Epicloops provides the best <a href="https://creativecommons.org/licenses/" target="_blank">Creative Commons</a> audio files from around the web in loop/sample form. We analyze the quality of every audio file we dig up to determine the best candidates to be sliced into beats and measures. After slicing them up, we package both the full audio file and the pre-sliced samples with data such as tempo, key, etc. so you can easily integrate them into your projects.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+
+<div class="hidden-xs row">
+  <div class="col-sm-6">
+    <h3>{{ collections.pro.title }}</h3>
+    <hr>
+    {% unless collections.pro.description == '' %}
+      <p class="lead">{{ collections.pro.description }}</p>
+    {% endunless %}
+    <hr>
+    {% for product in collections.pro.products %}
+      {% include 'product-list' with '2' %}
+    {% endfor %}
+  </div>
+  <div class="col-sm-6">
+    <h3>{{ collections.lite.title }}</h3>
+    <hr>
+    {% unless collections.lite.description == '' %}
+      <p class="lead">{{ collections.lite.description }}</p>
+    {% endunless %}
+    <hr>
+    {% for product in collections.lite.products %}
+      {% include 'product-list' with '2' %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="visible-xs row text-center">
+  <div class="col-xs-12">
+    <h3>{{ collections.pro.title }}</h3>
+    <hr>
+    {% unless collections.pro.description == '' %}
+      <p class="lead">{{ collections.pro.description }}</p>
+    {% endunless %}
+    <hr>
+    {% for product in collections.pro.products %}
+      {% include 'product-list' with '2' %}
+    {% endfor %}
+  </div>
+</div>
+<div class="visible-xs row text-center">
+  <div class="col-xs-12">
+    <h3>{{ collections.lite.title }}</h3>
+    <hr>
+    {% unless collections.lite.description == '' %}
+      <p class="lead">{{ collections.lite.description }}</p>
+    {% endunless %}
+    <hr>
+    {% for product in collections.lite.products %}
+      {% include 'product-list' with '2' %}
+    {% endfor %}
+  </div>
+</div>

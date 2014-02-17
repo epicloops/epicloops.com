@@ -1,0 +1,47 @@
+<header class="page-header text-center">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>My Account <small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <a href="/account">&larr; Account Summary</a></li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><small>Order {{ order.name }} &mdash; {{ order.created_at | date: "%B %d, %Y" }}</small></h1>
+    </div>
+  </div>
+</header>
+
+<!-- Order Details -->
+<div class="hidden-xs hidden-sm row">
+
+  <!-- Order Address and Status Information -->
+  <div class="col-xs-4">
+    {% include 'order-billing' %}
+  </div>
+
+  <!-- Order Summary -->
+  <div class="col-xs-8">
+    {% include 'order-summary' %}
+  </div>
+
+</div>
+
+<!-- Order Details -->
+<div class="visible-xs visible-sm row">
+  <!-- Order Address and Status Information -->
+  <div class="col-xs-12">
+    {% include 'order-billing' %}
+  </div>
+</div>
+
+<div class="visible-xs visible-sm row">
+  <!-- Order Summary -->
+  <div class="col-xs-12">
+    {% include 'order-summary' %}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<h3>Order History</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Date</th>
+      <th>Payment Status</th>
+      <th>Fulfilment Status</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if customer.orders.size != 0 %}
+  {% for order in customer.orders %}
+    <tr class="{% if order.cancelled %}error{% endif %}">
+      <td>{{ order.name | link_to: order.customer_url }}</td>
+      <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+      <td>{{ order.financial_status }}</td>
+      <td>{{ order.fulfillment_status }}</td>
+      <td>{{ order.total_price | money }}</td>
+    </tr>
+  {% endfor %}
+  {% else %}
+    <tr>
+      <td colspan="5">
+        <em>No orders placed.</em>
+      </td>
+    </tr>
+  {% endif %}
+  </tbody>
+</table>

@@ -1,0 +1,77 @@
+<div class="col-xs-12 main-title">
+  <p>About us</p>
+</div>
+<p>{{ shop.description }}</p>
+<div class="row">
+  <div class="col-sm-12">
+    Social:
+  </div>
+</div>
+<div class="row social">
+  <div class="col-sm-12">
+    {% if settings.social_show_twitter == true %}
+      <a href="{{ settings.social_url_twitter }}" target="_blank" class="twitter">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_facebook == true %}
+      <a href="{{ settings.social_url_facebook }}" target="_blank" class="facebook">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_google_plus == true %}
+      <a href="{{ settings.social_url_google_plus }}" target="_blank" class="google_plus">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_youtube == true %}
+      <a href="{{ settings.social_url_youtube }}" target="_blank" class="youtube">
+        <i class="fa fa-youtube-square fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_vimeo == true %}
+      <a href="{{ settings.social_url_vimeo }}" target="_blank" class="vimeo">
+        <i class="fa fa-vimeo-square fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_email == true %}
+      <a href="mailto:{{ shop.email }}" target="_blank" class="email">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    {% endif %}
+    {% if settings.social_show_rss == true %}
+      <a href="http://epicloops.com/blogs/news.atom" target="_blank" class="rss">
+        <i class="fa fa-rss-square fa-lg"></i>
+      </a>
+    {% endif %}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    We accept:
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="cards">
+      {% if settings.pay_visa == true %}
+        <a href="#" class="visa"></a>
+      {% endif %}
+      {% if settings.pay_amex == true %}
+        <a href="#" class="americanexpress"></a>
+      {% endif %}
+      {% if settings.pay_mastercard == true %}
+        <a href="#" class="mastercard"></a>
+      {% endif %}
+      {% if settings.pay_discover == true %}
+        <a href="#" class="discover"></a>
+      {% endif %}
+      {% if settings.pay_paypal == true %}
+        <a href="#" class="paypal"></a>
+      {% endif %}
+      {% if settings.pay_google == true %}
+        <a href="#" class="google"></a>
+      {% endif %}
+    </div>
+  </div>
+</div>

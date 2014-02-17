@@ -1,0 +1,31 @@
+<header class="page-header text-center">
+  <h1>My Account</h1>
+</header>
+
+<div class="hidden-xs hidden-sm row">
+  <!-- Account Details -->
+  <div class="col-md-4">
+    {% include 'acct-details' %}
+  </div>
+
+  <!-- Order History -->
+  <div class="col-md-8">
+    {% include 'acct-history' %}
+  </div>
+</div>
+
+<div class="visible-xs visible-sm row">
+  <!-- Account Details -->
+  <div class="col-xs-12">
+    {% include 'acct-details' %}
+  </div>
+</div>
+
+<div class="visible-xs visible-sm row">
+  <!-- Order History -->
+  <div class="col-xs-12">
+    {% include 'acct-history' %}
+  </div>
+</div>
+
+{% include 'recently-viewed' %}

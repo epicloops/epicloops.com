@@ -1,0 +1,20 @@
+<div class="main-title">
+  <p>Newsletter</p>
+</div>
+<p>{{ settings.newsletter_copy }}</p>
+{% form 'customer' %}
+  {% if form.errors %}
+    <p>
+      {% for field in form.errors %}
+        {{ field }} - {{ form.errors.messages[field] }}
+      {% endfor %}
+    </p>
+    {% endif %}
+  {% if form.posted_successfully? %}
+      <p><b>{{ settings.newsletter_success }}</b></p>
+  {% else %}
+    <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
+    <i class="hidden-xs fa fa-envelope fa-lg"></i>
+    <input type="text" id="contact_email" name="contact[email]" placeholder="E-mail address" />
+  {% endif %}
+{% endform %}

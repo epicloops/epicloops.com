@@ -1,0 +1,119 @@
+<!-- Wrapping Product Div -->
+<div itemscope itemtype="http://schema.org/Product">
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 product-images">
+      <!-- Primary Image -->
+      <p>
+        {% if product.images.size > 0 %}
+        <div class="thumbnail">
+          <img src="{{ product.images | first | product_img_url: 'large' }}" alt="{{ product.title | escape }}" itemprop="image" />
+        </div>
+        {% else %}
+        <span class="thumbnail">
+          <img src="{{ 'png-no-image.png' | asset_url }}" alt="No Image" />
+        </span>
+        {% endif %}
+      </p>
+
+      <!-- Other Images -->
+      {% for image in product.images %}
+      {% unless forloop.first %}
+        {% capture iteration %}{% cycle '1', '2' %}{% endcapture %}
+
+          {% if iteration == '1' %}
+          <div class="row">
+          {% endif %}
+
+            <div class="col-xs-6">
+              <p>
+                <a href="{{ image | product_img_url: 'large' }}" title="{{ product.title | escape }}" class="thumbnail">
+                  <img src="{{ image | product_img_url: 'medium' }}" alt="{{ product.title | escape }}" itemprop="image" />
+                </a>
+              </p>
+            </div>
+
+          {% if iteration == '2' or forloop.last %}
+          </div>
+          {% endif %}
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      <div class="row">
+        <form action="/cart/add" method="post" role="form">
+          <!-- Required by shopify: Product Variants -->
+          {% if product.variants.size > 1 %}
+            <div class="form-group">
+              <select id="product-select" name="id" class="form-control">
+                {% for variant in product.variants %}
+                  <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          {% else %}
+            {% for variant in product.variants %}
+              {% if forloop.first %}
+                <input type="hidden" name="id" value="{{ variant.id }}" />
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <!-- Add To Cart Button -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg" id="product-add">
+              <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                {% if product.available %}
+                  {% if product.compare_at_price_max > product.price %}<del>{{ product.compare_at_price_max | money }}</del> {% endif %}
+                  {% if product.price_varies %} from {% endif %}
+                  <span itemprop="price">{{ product.price | money }}</span>
+                  <meta itemprop="currency" content="{{ shop.currency }}" />
+                  {% if product.compare_at_price_max > product.price and settings.product_show_sale_tag %}
+                    <span class="label label-success">SALE</span>
+                  {% endif %}
+                {% else %}
+                  <em>Currently Unavailable</em>
+                {% endif %}
+                <!-- Availability Microdata -->
+                <meta itemprop="availability" content="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}" />
+                <span> | Add to Cart</span>
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      Jplayer
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Product Description -->
+    <div class="col-xs-8 col-xs-offset-2 text-center" itemprop="description">
+      <h2 itemprop="name">{{ product.title }}</h2>
+      {{ product.description }}
+    </div>
+  </div>
+
+</div> <!-- End wrapping product div. -->
+
+{% include 'recently-viewed' %}
+

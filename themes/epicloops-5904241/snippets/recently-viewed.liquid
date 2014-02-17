@@ -1,0 +1,33 @@
+<div class="row recently-viewed">
+  <div class="col-xs-12">
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Recently Viewed</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div id="recently-viewed-products" class="row" style="display:none">
+
+    </div>
+
+    {% raw %}
+    <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+    <div id="product-${handle}" class="col-xs-6 col-sm-3">
+      <div class="thumbnail">
+        <a href="${url}">
+          <img src="${featured_image}" />
+        </a>
+      </div>
+      <div class="details">
+        <a href="${url}" title="${title}"><h5>${title}</h5></a>
+        <p class="lead text-muted">${Shopify.formatMoney(price)}</p>
+      </div>
+    </div>
+    </script>
+    {% endraw %}
+  </div>
+</div>
+
+{% assign show_recently_viewed = true %}

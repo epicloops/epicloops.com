@@ -1,0 +1,44 @@
+<header class="page-header">
+  <h1 class="hidden-xs">{{ collection.title }}</h1>
+  <h1 class="visible-xs text-center">{{ collection.title }}</h1>
+</header>
+
+<!-- Display the collection description if one exists. -->
+{% unless collection.description == '' %}
+  <p class="hidden-xs lead">{{ collection.description }}</p>
+  <p class="visible-xs lead text-center">{{ collection.description }}</p>
+{% endunless %}
+
+<div class="row">
+
+  <div class="hidden-xs col-xs-12">
+    {% paginate collection.products by 12 %}
+
+      <!-- Include product list in groups of 4. -->
+      {% for product in collection.products %}
+        {% include 'product-list' with '4' %}
+      {% endfor %}
+
+      <div class="text-center">
+        {% include 'pagination' with 'product' %}
+      </div>
+
+    {% endpaginate %}
+  </div>
+
+  <div class="visible-xs col-xs-12">
+    {% paginate collection.products by 12 %}
+
+      <!-- Include product list in groups of 4. -->
+      {% for product in collection.products %}
+        {% include 'product-list' with '2' %}
+      {% endfor %}
+
+      <div class="text-center">
+        {% include 'pagination' with 'product' %}
+      </div>
+
+    {% endpaginate %}
+  </div>
+
+</div>
