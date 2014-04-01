@@ -30,12 +30,12 @@
                 <h4>{{ product.title }}</h4>
               </a>
             </div>
-            <div class="item-desc">
-              <p>{{ product.description | newline_to_br | split: '<br />' | first | truncate: 400 }}</p>
+            <div class="item-desc lead">
+              <p>{{ product.description }}</p>
             </div>
-            <div class="item-desc-more">
+<!--             <div class="item-desc-more">
               <a href="{{ shop.url }}{{ product.url }}">More...</a>
-            </div>
+            </div> -->
           </div>
       </div>
       {% endfor %}
